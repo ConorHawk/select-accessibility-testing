@@ -1,1 +1,103 @@
-<p>Test</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Select accessibility testing</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bulma.css">
+	<link rel="stylesheet" type="text/css" href="css/selectize.css">
+	<link rel="stylesheet" type="text/css" href="css/selectWoo.css">
+	<link rel="stylesheet" type="text/css" href="css/chosen.min.css">
+</head>
+<body>
+	<section class="hero is-info">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title">Multiple select accessibility testing</h1>
+				<p class="subtitle">A collection of popular javascript select input replacements on the same page to test their accessibility.</p>
+			</div>
+		</div>
+	</section>
+	<div class="container">
+		
+		<section class="section">
+			<h2 class="subtitle">SelectWoo</h2>
+			<label for="selectWooSelect">Choose your favorite city?</label>
+			<br>
+			<select id="selectWooSelect" name="select" multiple>
+				<option value="1">Amsterdam</option>
+				<option value="2">Buenos Aires</option>
+				<option value="3">Delhi</option>
+				<option value="4">Hong Kong</option>
+				<option value="5">London</option>
+				<option value="6">Los Angeles</option>
+				<option value="7">Moscow</option>
+				<option value="8">Mumbai</option>
+				<option value="9">New York</option>
+				<option value="10">Sao Paulo</option>
+				<option value="11">Tokyo</option>
+			</select>
+		</section>
+		<section class="section">
+			<h2 class="subtitle">Selectize</h2>
+			<label for="selectizeSelect">Choose your favorite city?</label>
+			<br>
+			<select id="selectizeSelect" name="select" multiple>
+				<option value="1">Amsterdam</option>
+				<option value="2">Buenos Aires</option>
+				<option value="3">Delhi</option>
+				<option value="4">Hong Kong</option>
+				<option value="5">London</option>
+				<option value="6">Los Angeles</option>
+				<option value="7">Moscow</option>
+				<option value="8">Mumbai</option>
+				<option value="9">New York</option>
+				<option value="10">Sao Paulo</option>
+				<option value="11">Tokyo</option>
+			</select>
+		</section>
+
+		<section class="section">
+			<h2 class="subtitle">Chosen</h2>
+			<label for="chosenSelect">Choose your favorite city?</label>
+			<br>
+			<select id="chosenSelect" name="select" multiple>
+				<option value="1">Amsterdam</option>
+				<option value="2">Buenos Aires</option>
+				<option value="3">Delhi</option>
+				<option value="4">Hong Kong</option>
+				<option value="5">London</option>
+				<option value="6">Los Angeles</option>
+				<option value="7">Moscow</option>
+				<option value="8">Mumbai</option>
+				<option value="9">New York</option>
+				<option value="10">Sao Paulo</option>
+				<option value="11">Tokyo</option>
+			</select>
+		</section>
+	</div>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/chosen.jquery.min.js"></script>
+	<script src="js/selectWoo.js"></script>
+	<script src="js/selectize.min.js"></script>
+	<script>
+		$("#selectWooSelect").selectWoo();
+
+		$('#selectizeSelect').selectize({
+			plugins: ['remove_button'],
+		    delimiter: ',',
+		    persist: false,
+		});
+
+		$("#chosenSelect").chosen()
+	</script>
+	<style>
+		select, 
+		.select2-container, 
+		.chosen-container {
+			width:100%!important;
+		}
+	</style>
+</body>
+</html>
