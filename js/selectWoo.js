@@ -1884,14 +1884,14 @@ S2.define('select2/selection/search',[
   Search.prototype.render = function (decorated) {
     var $search = $(
       '<li class="select2-search select2-search--inline">' +
-        '<input class="select2-search__field" type="text" tabindex="-1"' +
+        '<input class="select2-search__field" aria-label="' + $("label[for='" + this.$element.attr('id')  + "']").text() + '" type="text" tabindex="-1"' +
         ' autocomplete="off" autocorrect="off" autocapitalize="off"' +
         ' spellcheck="false" role="textbox" aria-autocomplete="list" />' +
       '</li>'
     );
 
     this.$searchContainer = $search;
-    this.$search = $search.find('input');
+    this.$search = $search.find('input'); 
 
     var $rendered = decorated.call(this);
 
